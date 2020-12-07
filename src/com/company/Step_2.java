@@ -152,4 +152,14 @@ public class Step_2 {
         cube[2][1]=save1;
         cube[2][2]=save2;
     }
+    private void BComa(String[][] cube){
+        //가장 아랫줄을 왼쪽으로 한 칸 밀기 GBB -> BBG
+        String save1=cube[2][0];
+        String save2=cube[2][1];
+        String save3=cube[2][2];
+
+        cube[2][0]=save2;
+        cube[2][1]=save3;
+        cube[2][2]=save1;
+    }
 }
