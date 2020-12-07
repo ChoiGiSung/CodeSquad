@@ -122,4 +122,14 @@ public class Step_2 {
         cube[1][2]=save1;
         cube[2][2]=save2;
     }
+    private void L(String[][] cube){
+        //가장 왼쪽 줄을 아래로 한 칸 밀기 RGG -> GRG (L의 경우 R과 방향이 반대임을 주의한다.)
+        String save1=cube[0][0];
+        String save2=cube[1][0];
+        String save3=cube[2][0];
+
+        cube[0][0]=save3;
+        cube[1][0]=save1;
+        cube[2][0]=save2;
+    }
 }
