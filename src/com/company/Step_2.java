@@ -132,4 +132,14 @@ public class Step_2 {
         cube[1][0]=save1;
         cube[2][0]=save2;
     }
+    private void LComa(String[][] cube){
+        //가장 왼쪽 줄을 위로 한 칸 밀기 RGG -> GGR
+        String save1=cube[0][0];
+        String save2=cube[1][0];
+        String save3=cube[2][0];
+
+        cube[0][0]=save2;
+        cube[1][0]=save3;
+        cube[2][0]=save1;
+    }
 }
