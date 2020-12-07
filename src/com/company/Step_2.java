@@ -91,4 +91,14 @@ public class Step_2 {
         cube[0][1]=save3;
         cube[0][2]=save1;
     }
+    private void UComa(String[][] cube){
+        //가장 윗줄을 오른쪽으로 한 칸 밀기 RRW -> WRR
+        String save1=cube[0][0];
+        String save2=cube[0][1];
+        String save3=cube[0][2];
+
+        cube[0][0]=save3;
+        cube[0][1]=save1;
+        cube[0][2]=save2;
+    }
 }
