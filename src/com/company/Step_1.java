@@ -52,5 +52,22 @@ public class Step_1 {
         }
         return index;
     }
+    //출력
+    private void printStr(char []chars,int []index){
+        StringBuilder stringBuilder=new StringBuilder();
+        char[] char2=new char[chars.length];
+
+        for (int i = 0; i < index.length; i++) {
+            char aChar = chars[i];
+            char2[index[i]]=aChar;
+
+        }
+
+        for (char c : char2) {
+            stringBuilder.append(c);
+        }
+        System.out.print(stringBuilder.toString());
+    }
+
 
 }
