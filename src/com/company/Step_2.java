@@ -111,4 +111,15 @@ public class Step_2 {
         cube[1][2]=save3;
         cube[2][2]=save1;
     }
+
+    private void RComa(String[][] cube){
+        //가장 오른쪽 줄을 아래로 한 칸 밀기 WWB -> BWW
+        String save1=cube[0][2];
+        String save2=cube[1][2];
+        String save3=cube[2][2];
+
+        cube[0][2]=save3;
+        cube[1][2]=save1;
+        cube[2][2]=save2;
+    }
 }
