@@ -26,5 +26,31 @@ public class Step_1 {
         printStr(chars,index);
     }
 
+    private int [] FillIndex(int plusminus,int index[]){
+        for (int i = 0; i < index.length; i++) {
+            //인덱스 배열에 움직일 배열 인덱스를 계산해서 넣기
+            int indexIndex=i+plusminus;
+
+            if(indexIndex<0){
+
+                //인덱스값이 0보다 아래면 0이상으로 만들기
+                while (indexIndex<0){
+                    indexIndex+=index.length;
+                }
+                index[i] =indexIndex;
+
+            }else if (indexIndex>=index.length){
+                //인덱스 값이 str길이보다 크면 str길이 이하로 줄이기
+                while (indexIndex>=index.length){
+                    indexIndex%=index.length;
+                    //크기가 길이 보다 작아질때 까지
+                }
+                index[i] = indexIndex;
+            }else{
+                index[i]=indexIndex;
+            }
+        }
+        return index;
+    }
 
 }
