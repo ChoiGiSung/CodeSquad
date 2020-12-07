@@ -15,6 +15,16 @@ public class Step_1 {
     }
 
 
+    private void Right(String str,int data){
+        //R이면 + 기호
+        int appendData = data;
+        char[] chars = str.toCharArray();
+
+        int[] index = FillIndex(appendData, new int[str.length()]);
+        //인덱스를 배열에 담기
+
+        printStr(chars,index);
+    }
 
 
 }
