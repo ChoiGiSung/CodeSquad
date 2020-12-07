@@ -142,4 +142,14 @@ public class Step_2 {
         cube[1][0]=save3;
         cube[2][0]=save1;
     }
+    private void B(String[][] cube){
+        //가장 아랫줄을 오른쪽으로 한 칸 밀기 GBB -> BGB (B의 경우도 U와 방향이 반대임을 주의한다.)
+        String save1=cube[2][0];
+        String save2=cube[2][1];
+        String save3=cube[2][2];
+
+        cube[2][0]=save3;
+        cube[2][1]=save1;
+        cube[2][2]=save2;
+    }
 }
