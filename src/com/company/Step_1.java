@@ -14,6 +14,17 @@ public class Step_1 {
         }
     }
 
+    private void Left(String str,int data){
+        //L이면 - 기호
+        int appendData = data*-1;
+        char[] chars = str.toCharArray();
+
+        int[] index = FillIndex(appendData, new int[str.length()]);
+        //인덱스를 배열에 담기
+
+        printStr(chars,index);
+        //그리기
+    }
 
     private void Right(String str,int data){
         //R이면 + 기호
@@ -55,15 +66,15 @@ public class Step_1 {
     //출력
     private void printStr(char []chars,int []index){
         StringBuilder stringBuilder=new StringBuilder();
-        char[] char2=new char[chars.length];
+        char[] result=new char[chars.length];
 
         for (int i = 0; i < index.length; i++) {
             char aChar = chars[i];
-            char2[index[i]]=aChar;
+            result[index[i]]=aChar;
 
         }
 
-        for (char c : char2) {
+        for (char c : result) {
             stringBuilder.append(c);
         }
         System.out.print(stringBuilder.toString());
