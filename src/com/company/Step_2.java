@@ -38,4 +38,47 @@ public class Step_2 {
         }
         System.out.println("");
     }
+    private int commandSwitch(char[]chars){
+        for (int i = 0; i < chars.length; i++) {
+            switch (chars[i]){
+                case 'U':
+                    U(cube);
+                    print(chars[i]);
+                    break;
+                case 'u':
+                    UComa(cube);
+                    print(chars[i]);
+                    break;
+                case 'R':
+                    R(cube);
+                    print(chars[i]);
+                    break;
+                case 'r':
+                    RComa(cube);
+                    print(chars[i]);
+                    break;
+                case 'L':
+                    L(cube);
+                    print(chars[i]);
+                    break;
+                case 'l':
+                    LComa(cube);
+                    print(chars[i]);
+                    break;
+                case 'B':
+                    B(cube);
+                    print(chars[i]);
+                    break;
+                case 'b':
+                    BComa(cube);
+                    print(chars[i]);
+                    break;
+                default:
+                    System.out.println("Bye~");
+                    return -1;
+
+            }
+        }
+        return 0;
+    }
 }
