@@ -81,4 +81,14 @@ public class Step_2 {
         }
         return 0;
     }
+    private void U(String[][] cube){
+        //가장 윗줄을 왼쪽으로 한 칸 밀기 RRW -> RWR
+        String save1=cube[0][0];
+        String save2=cube[0][1];
+        String save3=cube[0][2];
+
+        cube[0][0]=save2;
+        cube[0][1]=save3;
+        cube[0][2]=save1;
+    }
 }
