@@ -38,50 +38,52 @@ public class Step_2 {
         }
         System.out.println("");
     }
-    private int commandSwitch(char[]chars){
+    private String[][] commandSwitch(char[]chars,String[][]rocalArr){
+
         for (int i = 0; i < chars.length; i++) {
             switch (chars[i]){
                 case 'U':
-                    U(cube);
-                    print(chars[i]);
+                    rocalArr = U(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'u':
-                    UComa(cube);
-                    print(chars[i]);
+                    rocalArr = UComa(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'R':
-                    R(cube);
-                    print(chars[i]);
+                    rocalArr = R(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'r':
-                    RComa(cube);
-                    print(chars[i]);
+                    rocalArr = RComa(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'L':
-                    L(cube);
-                    print(chars[i]);
+                    rocalArr = L(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'l':
-                    LComa(cube);
-                    print(chars[i]);
+                    rocalArr = LComa(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'B':
-                    B(cube);
-                    print(chars[i]);
+                    rocalArr = B(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'b':
-                    BComa(cube);
-                    print(chars[i]);
+                    rocalArr = BComa(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 default:
                     System.out.println("Bye~");
-                    return -1;
+                    flag=false;
+                    break;
 
             }
         }
-        return 0;
+        return rocalArr;
     }
-    private void U(String[][] cube){
+    private String[][] U(String[][] cube){
         //가장 윗줄을 왼쪽으로 한 칸 밀기 RRW -> RWR
         String save1=cube[0][0];
         String save2=cube[0][1];
@@ -90,8 +92,9 @@ public class Step_2 {
         cube[0][0]=save2;
         cube[0][1]=save3;
         cube[0][2]=save1;
+        return cube;
     }
-    private void UComa(String[][] cube){
+    private String[][] UComa(String[][] cube){
         //가장 윗줄을 오른쪽으로 한 칸 밀기 RRW -> WRR
         String save1=cube[0][0];
         String save2=cube[0][1];
@@ -100,8 +103,9 @@ public class Step_2 {
         cube[0][0]=save3;
         cube[0][1]=save1;
         cube[0][2]=save2;
+        return cube;
     }
-    private void R(String[][] cube){
+    private String[][] R(String[][] cube){
         //가장 오른쪽 줄을 위로 한 칸 밀기 WWB -> WBW
         String save1=cube[0][2];
         String save2=cube[1][2];
@@ -110,9 +114,10 @@ public class Step_2 {
         cube[0][2]=save2;
         cube[1][2]=save3;
         cube[2][2]=save1;
+        return cube;
     }
 
-    private void RComa(String[][] cube){
+    private String[][] RComa(String[][] cube){
         //가장 오른쪽 줄을 아래로 한 칸 밀기 WWB -> BWW
         String save1=cube[0][2];
         String save2=cube[1][2];
@@ -121,8 +126,9 @@ public class Step_2 {
         cube[0][2]=save3;
         cube[1][2]=save1;
         cube[2][2]=save2;
+        return cube;
     }
-    private void L(String[][] cube){
+    private String[][] L(String[][] cube){
         //가장 왼쪽 줄을 아래로 한 칸 밀기 RGG -> GRG (L의 경우 R과 방향이 반대임을 주의한다.)
         String save1=cube[0][0];
         String save2=cube[1][0];
@@ -131,8 +137,9 @@ public class Step_2 {
         cube[0][0]=save3;
         cube[1][0]=save1;
         cube[2][0]=save2;
+        return cube;
     }
-    private void LComa(String[][] cube){
+    private String[][] LComa(String[][] cube){
         //가장 왼쪽 줄을 위로 한 칸 밀기 RGG -> GGR
         String save1=cube[0][0];
         String save2=cube[1][0];
@@ -141,8 +148,9 @@ public class Step_2 {
         cube[0][0]=save2;
         cube[1][0]=save3;
         cube[2][0]=save1;
+        return cube;
     }
-    private void B(String[][] cube){
+    private String[][] B(String[][] cube){
         //가장 아랫줄을 오른쪽으로 한 칸 밀기 GBB -> BGB (B의 경우도 U와 방향이 반대임을 주의한다.)
         String save1=cube[2][0];
         String save2=cube[2][1];
@@ -151,8 +159,9 @@ public class Step_2 {
         cube[2][0]=save3;
         cube[2][1]=save1;
         cube[2][2]=save2;
+        return cube;
     }
-    private void BComa(String[][] cube){
+    private String[][] BComa(String[][] cube){
         //가장 아랫줄을 왼쪽으로 한 칸 밀기 GBB -> BBG
         String save1=cube[2][0];
         String save2=cube[2][1];
@@ -161,5 +170,6 @@ public class Step_2 {
         cube[2][0]=save2;
         cube[2][1]=save3;
         cube[2][2]=save1;
+        return cube;
     }
 }
