@@ -1,9 +1,26 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Step_1 {
 
     //호출 메서드
-    public void calc(String str,int data,String RL){
+    public void input(){
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println("단어 하나 입력");
+        String str= sc.next();
+
+        System.out.println("-100~100  값 하나 입력");
+        int i = sc.nextInt();
+
+        System.out.println("우측으로 갈지 좌측으로 갈지 L,R");
+        String hand=sc.next();
+
+        calc(str,i,hand);
+    }
+
+    private void calc(String str,int data,String RL){
         char hand = Character.toUpperCase(RL.charAt(0));
         if(hand=='R'){
             Right(str,data);
