@@ -10,7 +10,9 @@ public class Step_2 {
     public void startGame(){
         Scanner sc=new Scanner(System.in);
         String[][]rocalArr=cube.clone(); //로컬 변수로 사용하기
+
         print(' ',rocalArr);
+
         while (flag){
             System.out.print("CUBE>");
             String commend=sc.nextLine();
