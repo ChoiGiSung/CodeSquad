@@ -24,14 +24,14 @@ public class Step_2 {
         }
     }
 
-    private void print(char c){
+    private void print(char c,String[][]rocalArr){
         String str=c+"";
         str=str.replace("u","U'").replace("r","R'")
                 .replace("l","L'").replace("b","B'");
         System.out.println(str);
-        for (int i = 0; i < cube.length; i++) {
-            for (int j=0;j<cube[0].length;j++){
-                System.out.print(cube[i][j]+" ");
+        for (int i = 0; i < rocalArr.length; i++) {
+            for (int j=0;j<rocalArr[0].length;j++){
+                System.out.print(rocalArr[i][j]+" ");
             }
             System.out.println("");
         }
