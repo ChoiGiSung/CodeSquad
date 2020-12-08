@@ -37,48 +37,50 @@ public class Step_2 {
         }
         System.out.println("");
     }
-    private int commandSwitch(char[]chars){
+    private String[][] commandSwitch(char[]chars,String[][]rocalArr){
+
         for (int i = 0; i < chars.length; i++) {
             switch (chars[i]){
                 case 'U':
-                    U(cube);
-                    print(chars[i]);
+                    rocalArr = U(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'u':
-                    UComa(cube);
-                    print(chars[i]);
+                    rocalArr = UComa(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'R':
-                    R(cube);
-                    print(chars[i]);
+                    rocalArr = R(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'r':
-                    RComa(cube);
-                    print(chars[i]);
+                    rocalArr = RComa(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'L':
-                    L(cube);
-                    print(chars[i]);
+                    rocalArr = L(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'l':
-                    LComa(cube);
-                    print(chars[i]);
+                    rocalArr = LComa(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'B':
-                    B(cube);
-                    print(chars[i]);
+                    rocalArr = B(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 case 'b':
-                    BComa(cube);
-                    print(chars[i]);
+                    rocalArr = BComa(rocalArr);
+                    print(chars[i],rocalArr);
                     break;
                 default:
                     System.out.println("Bye~");
-                    return -1;
+                    flag=false;
+                    break;
 
             }
         }
-        return 0;
+        return rocalArr;
     }
     private void U(String[][] cube){
         //가장 윗줄을 왼쪽으로 한 칸 밀기 RRW -> RWR
