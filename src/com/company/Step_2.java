@@ -9,7 +9,7 @@ public class Step_2 {
 
     public void startGame(){
         Scanner sc=new Scanner(System.in);
-        String[][]rocalArr=cube.clone(); //로컬 변수로 사용하기
+        String[][]rocalArr=deepCopy(); //로컬 변수로 사용하기
 
         print(' ',rocalArr);
 
@@ -24,6 +24,19 @@ public class Step_2 {
             rocalArr= commandSwitch(chars,rocalArr);
 
         }
+    }
+
+    //깊은 복사로 복사해서 전역변수의 사용을 줄여보자
+    private String[][] deepCopy(){
+        String[][]rocalArr=new String[cube.length][cube[0].length];
+
+        for (int i = 0; i < cube.length; i++) {
+            for (int j = 0; j < rocalArr.length; j++) {
+                rocalArr[i][j]=cube[i][j];
+            }
+        }
+
+        return rocalArr;
     }
 
     private void print(char c,String[][]rocalArr){
