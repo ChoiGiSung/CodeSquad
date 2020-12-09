@@ -59,6 +59,31 @@ public class Step_3 {
         }
 
     }
+    public void U(){
+        //입력이 U일때
+        String []temp={BCube[0][0],BCube[0][1],BCube[0][2]};
+
+        //옆면들 옮기기 시작
+        BCube[0][0]=LCube[0][0];
+        BCube[0][1]=LCube[0][1];
+        BCube[0][2]=LCube[0][2];
+
+        LCube[0][0]=FCube[0][0];
+        LCube[0][1]=FCube[0][1];
+        LCube[0][2]=FCube[0][2];
+
+        FCube[0][0]=RCube[0][0];
+        FCube[0][1]=RCube[0][1];
+        FCube[0][2]=RCube[0][2];
+
+        RCube[0][0]=temp[0];
+        RCube[0][1]=temp[1];
+        RCube[0][2]=temp[2];
+
+        //이제 평면 부분 돌기
+        UCube=turnClock(UCube);
+    }
+
     public void L(){
         //입력이 L일때
         String []temp={UCube[0][0],UCube[1][0],UCube[2][0]};
