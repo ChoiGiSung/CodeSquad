@@ -197,7 +197,24 @@ public class Step_3 {
 
     }
 
+    private String[][] turnAnticlockwise(String[][] cube) {
+        //반시계 방향으로 턴
+        String[][]rocalCube=new String[3][3];
 
+        rocalCube[2][0]=cube[0][0];
+        rocalCube[1][0]=cube[0][1];
+        rocalCube[0][0]=cube[0][2];
+
+        rocalCube[2][1]=cube[1][0];
+        rocalCube[1][1]=cube[1][1];
+        rocalCube[0][1]=cube[1][2];
+
+        rocalCube[2][2]=cube[2][0];
+        rocalCube[1][2]=cube[2][1];
+        rocalCube[0][2]=cube[2][2];
+
+        return rocalCube;
+    }
 
     public String[][] turnClock(String[][]cube){
         //시계 방향으로 턴
