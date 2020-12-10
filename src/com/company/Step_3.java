@@ -21,43 +21,31 @@ public class Step_3 {
             {"7","8","9"}};//하
 
 
+    private void printsolo(String[][]cube){
+        for (int i = 0; i < cube.length; i++) {
+            for (int j = 0; j < cube[0].length; j++) {
+                System.out.print(cube[i][j]);
+            }
+            System.out.println(" ");
+        }
+    }
     public void print(){
         System.out.println("");
+        printsolo(UCube);
         for (int i = 0; i < UCube.length; i++) {
+            StringBuilder str1=new StringBuilder();
+            StringBuilder str2=new StringBuilder();
+            StringBuilder str3=new StringBuilder();
+            StringBuilder str4=new StringBuilder();
             for (int j = 0; j < UCube[0].length; j++) {
-                System.out.print(UCube[i][j]);
+                str1.append(LCube[i][j]);
+                str2.append(FCube[i][j]);
+                str3.append(RCube[i][j]);
+                str4.append(BCube[i][j]);
             }
-            System.out.println(" ");
+            System.out.print(str1+"\t"+str2+"\t"+str3+"\t"+str4+"\t"+"\n");
         }
-        for (int i = 0; i < UCube.length; i++) {
-            for (int j = 0; j < UCube[0].length; j++) {
-                System.out.print(LCube[i][j]);
-            }
-            System.out.print("\t");
-            for (int j = 0; j < UCube[0].length; j++) {
-                System.out.print(FCube[i][j]);
-
-            }
-            System.out.print("\t");
-            for (int j = 0; j < UCube[0].length; j++) {
-                System.out.print(RCube[i][j]);
-
-            }
-            System.out.print("\t");
-            for (int j = 0; j < UCube[0].length; j++) {
-                System.out.print(BCube[i][j]);
-
-            }
-            System.out.println(" ");
-        }
-
-        for (int i = 0; i < UCube.length; i++) {
-            for (int j = 0; j < UCube[0].length; j++) {
-                System.out.print(DCube[i][j]);
-            }
-            System.out.println(" ");
-        }
-
+        printsolo(DCube);
     }
     public void U(){
         //입력이 U일때
