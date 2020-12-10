@@ -129,7 +129,7 @@ public class Step_3 {
             System.out.println(" ");
         }
     }
-    public void print(char c){
+    private void print(char c){
         String str = replaceCommendChar(c); //글자 하나씩 출력
         System.out.println("\n"+str);
         printsolo(UCube);
@@ -148,7 +148,7 @@ public class Step_3 {
         }
         printsolo(DCube);
     }
-    public void U(){
+    private void U(){
         String []temp={BCube[0][0],BCube[0][1],BCube[0][2]};//입력이 U일때
         BCube[0][0]=LCube[0][0];//옆면들 옮기기 시작
         BCube[0][1]=LCube[0][1];
@@ -168,7 +168,7 @@ public class Step_3 {
         UCube=turnClock(UCube);//이제 평면 부분 돌기
     }
 
-    public void L(){
+    private void L(){
         String []temp={UCube[0][0],UCube[1][0],UCube[2][0]};//입력이 L일때
         UCube[2][0]=BCube[0][2];//옆면들 옮기기 시작
         UCube[1][0]=BCube[1][2];
@@ -187,7 +187,7 @@ public class Step_3 {
         FCube[2][0]=temp[2];
         LCube=turnClock(LCube);//이제 평면 부분 돌기
     }
-    public void R(){
+    private void R(){
         String []temp={UCube[0][2],UCube[1][2],UCube[2][2]};//입력이 R일때
         UCube[0][2]=FCube[0][2];//옆면들 옮기기 시작
         UCube[1][2]=FCube[1][2];
@@ -207,7 +207,7 @@ public class Step_3 {
         RCube=turnClock(RCube);//이제 평면 부분 돌기
     }
 
-    public void B(){
+    private void B(){
         String []temp={UCube[0][0],UCube[0][1],UCube[0][2]};//입력이 B일때
         UCube[0][0]=RCube[0][2];//옆면들 옮기기 시작
         UCube[0][1]=RCube[1][2];
@@ -227,7 +227,7 @@ public class Step_3 {
         BCube=turnClock(BCube);//이제 평면 부분 돌기
     }
 
-    public void D(){
+    private void D(){
         String []temp={FCube[2][0],FCube[2][1],FCube[2][2]};//입력이 D일때
         FCube[2][2]=LCube[2][2];//옆면들 옮기기 시작
         FCube[2][1]=LCube[2][1];
@@ -246,7 +246,7 @@ public class Step_3 {
         RCube[2][0]=temp[0];
         DCube=turnClock(DCube);//이제 평면 부분 돌기
     }
-    public void F(){
+    private void F(){
         String []temp={UCube[2][0],UCube[2][1],UCube[2][2]};//입력이 F일때
         UCube[2][0]=LCube[2][2];//옆면들 옮기기 시작
         UCube[2][1]=LCube[1][2];
@@ -403,7 +403,7 @@ public class Step_3 {
         return rocalCube;
     }
 
-    public String[][] turnClock(String[][]cube){
+    private String[][] turnClock(String[][]cube){
         //시계 방향으로 턴
         String[][]rocalCube=new String[3][3];
 
