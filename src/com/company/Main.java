@@ -10,9 +10,12 @@ public class Main {
 //        step_1.input();
 
         //2번 문제
-        Step_2 step_2=new Step_2();
-        step_2.startGame();
+//        Step_2 step_2=new Step_2();
+//        step_2.startGame();
 
+        //3번 문제
+        Step_3 step_3=new Step_3();
+        step_3.startGame();
 
 
 
