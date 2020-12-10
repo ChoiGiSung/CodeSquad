@@ -266,6 +266,25 @@ public class Step_3 {
         FCube=turnClock(FCube);//이제 평면 부분 돌기
 
     }
+    private void UComma(){
+        String []temp={BCube[0][0],BCube[0][1],BCube[0][2]};//입력이 U일때
+        BCube[0][0]=RCube[0][0];//옆면들 옮기기 시작
+        BCube[0][1]=RCube[0][1];
+        BCube[0][2]=RCube[0][2];
+
+        RCube[0][0]=FCube[0][0];
+        RCube[0][1]=FCube[0][1];
+        RCube[0][2]=FCube[0][2];
+
+        FCube[0][0]=LCube[0][0];
+        FCube[0][1]=LCube[0][1];
+        FCube[0][2]=LCube[0][2];
+
+        LCube[0][0]=temp[0];
+        LCube[0][1]=temp[1];
+        LCube[0][2]=temp[2];
+        UCube=turnAnticlockwise(UCube);//이제 평면 부분 반시계로돌기
+    }
 
     private String[][] turnAnticlockwise(String[][] cube) {
         //반시계 방향으로 턴
