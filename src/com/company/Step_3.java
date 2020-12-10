@@ -37,6 +37,70 @@ public class Step_3 {
 
         }
     }
+    private void commandSwitch(char[]chars){
+
+        for (int i = 0; i < chars.length; i++) {
+            switch (chars[i]){
+                case 'U':
+                    U();
+                    print(chars[i]);
+                    break;
+                case 'u':
+                    UComma();
+                    print(chars[i]);
+                    break;
+                case 'R':
+                    R();
+                    print(chars[i]);
+                    break;
+                case 'r':
+                    RComma();
+                    print(chars[i]);
+                    break;
+                case 'L':
+                    L();
+                    print(chars[i]);
+                    break;
+                case 'l':
+                    LComma();
+                    print(chars[i]);
+                    break;
+                case 'B':
+                    B();
+                    print(chars[i]);
+                    break;
+                case 'b':
+                    BComma();
+                    print(chars[i]);
+                    break;
+                case 'F':
+                    F();
+                    print(chars[i]);
+                    break;
+                case 'f':
+                    FComma();
+                    print(chars[i]);
+                    break;
+                case 'D':
+                    D();
+                    print(chars[i]);
+                    break;
+                case 'd':
+                    DComma();
+                    print(chars[i]);
+                    break;
+                case '2':
+                    //숫자 2가 들어왔을떄
+                    break;
+                default:
+                    System.out.println("Bye~");
+                    flag=false;
+                    break;
+            }
+        }
+
+    }
+
 
 
     private String replaceCommend(String commend){
