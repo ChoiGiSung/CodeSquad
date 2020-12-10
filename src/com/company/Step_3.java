@@ -48,11 +48,8 @@ public class Step_3 {
         printsolo(DCube);
     }
     public void U(){
-        //입력이 U일때
-        String []temp={BCube[0][0],BCube[0][1],BCube[0][2]};
-
-        //옆면들 옮기기 시작
-        BCube[0][0]=LCube[0][0];
+        String []temp={BCube[0][0],BCube[0][1],BCube[0][2]};//입력이 U일때
+        BCube[0][0]=LCube[0][0];//옆면들 옮기기 시작
         BCube[0][1]=LCube[0][1];
         BCube[0][2]=LCube[0][2];
 
@@ -67,17 +64,12 @@ public class Step_3 {
         RCube[0][0]=temp[0];
         RCube[0][1]=temp[1];
         RCube[0][2]=temp[2];
-
-        //이제 평면 부분 돌기
-        UCube=turnClock(UCube);
+        UCube=turnClock(UCube);//이제 평면 부분 돌기
     }
 
     public void L(){
-        //입력이 L일때
-        String []temp={UCube[0][0],UCube[1][0],UCube[2][0]};
-
-        //옆면들 옮기기 시작
-        UCube[2][0]=BCube[0][2];
+        String []temp={UCube[0][0],UCube[1][0],UCube[2][0]};//입력이 L일때
+        UCube[2][0]=BCube[0][2];//옆면들 옮기기 시작
         UCube[1][0]=BCube[1][2];
         UCube[0][0]=BCube[2][2];
 
@@ -92,16 +84,11 @@ public class Step_3 {
         FCube[0][0]=temp[0];
         FCube[1][0]=temp[1];
         FCube[2][0]=temp[2];
-
-        //이제 평면 부분 돌기
-        LCube=turnClock(LCube);
+        LCube=turnClock(LCube);//이제 평면 부분 돌기
     }
     public void R(){
-        //입력이 R일때
-        String []temp={UCube[0][2],UCube[1][2],UCube[2][2]};
-
-        //옆면들 옮기기 시작
-        UCube[0][2]=FCube[0][2];
+        String []temp={UCube[0][2],UCube[1][2],UCube[2][2]};//입력이 R일때
+        UCube[0][2]=FCube[0][2];//옆면들 옮기기 시작
         UCube[1][2]=FCube[1][2];
         UCube[2][2]=FCube[2][2];
 
@@ -116,17 +103,12 @@ public class Step_3 {
         BCube[2][0]=temp[0];
         BCube[1][0]=temp[1];
         BCube[0][0]=temp[2];
-
-        //이제 평면 부분 돌기
-        RCube=turnClock(RCube);
+        RCube=turnClock(RCube);//이제 평면 부분 돌기
     }
 
     public void B(){
-        //입력이 B일때
-        String []temp={UCube[0][0],UCube[0][1],UCube[0][2]};
-
-        //옆면들 옮기기 시작
-        UCube[0][0]=RCube[0][2];
+        String []temp={UCube[0][0],UCube[0][1],UCube[0][2]};//입력이 B일때
+        UCube[0][0]=RCube[0][2];//옆면들 옮기기 시작
         UCube[0][1]=RCube[1][2];
         UCube[0][2]=RCube[2][2];
 
@@ -141,17 +123,12 @@ public class Step_3 {
         LCube[2][0]=temp[0];
         LCube[1][0]=temp[1];
         LCube[0][0]=temp[2];
-
-        //이제 평면 부분 돌기
-        BCube=turnClock(BCube);
+        BCube=turnClock(BCube);//이제 평면 부분 돌기
     }
 
     public void D(){
-        //입력이 D일때
-        String []temp={FCube[2][0],FCube[2][1],FCube[2][2]};
-
-        //옆면들 옮기기 시작
-        FCube[2][2]=LCube[2][2];
+        String []temp={FCube[2][0],FCube[2][1],FCube[2][2]};//입력이 D일때
+        FCube[2][2]=LCube[2][2];//옆면들 옮기기 시작
         FCube[2][1]=LCube[2][1];
         FCube[2][0]=LCube[2][0];
 
@@ -166,16 +143,11 @@ public class Step_3 {
         RCube[2][2]=temp[2];
         RCube[2][1]=temp[1];
         RCube[2][0]=temp[0];
-
-        //이제 평면 부분 돌기
-        DCube=turnClock(DCube);
+        DCube=turnClock(DCube);//이제 평면 부분 돌기
     }
     public void F(){
-        //입력이 F일때
-        String []temp={UCube[2][0],UCube[2][1],UCube[2][2]};
-
-        //옆면들 옮기기 시작
-        UCube[2][0]=LCube[2][2];
+        String []temp={UCube[2][0],UCube[2][1],UCube[2][2]};//입력이 F일때
+        UCube[2][0]=LCube[2][2];//옆면들 옮기기 시작
         UCube[2][1]=LCube[1][2];
         UCube[2][2]=LCube[0][2];
 
@@ -190,9 +162,7 @@ public class Step_3 {
         RCube[0][0]=temp[0];
         RCube[1][0]=temp[1];
         RCube[2][0]=temp[2];
-
-        //이제 평면 부분 돌기
-        FCube=turnClock(FCube);
+        FCube=turnClock(FCube);//이제 평면 부분 돌기
 
     }
     public String[][] turnClock(String[][]cube){
