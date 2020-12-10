@@ -39,7 +39,13 @@ public class Step_3 {
     }
 
 
-
+    private String replaceCommend(String commend){
+        String result=commend.replace("U'","u").replace("R'","r")
+                .replace("L'","l").replace("B'","b")
+                .replace("F'","f").replace("D'","d");
+        //'는 자르기 힘드니까 바꿔서 계산하기
+        return result;
+    }
 
 
     private String replaceCommendChar(char c){
