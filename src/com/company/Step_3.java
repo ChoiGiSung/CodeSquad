@@ -21,6 +21,22 @@ public class Step_3 {
     String [][]DCube={{"1","2","3"},
             {"4","5","6"},
             {"7","8","9"}};//하
+    private boolean flag=true;
+
+    public void startGame(){
+        Scanner sc=new Scanner(System.in);
+        print(' ');
+
+        while (flag){
+            System.out.print("CUBE>");
+            String commend=sc.nextLine();
+            commend=replaceCommend(commend);
+
+            char[] chars=commend.toCharArray();
+            commandSwitch(chars);
+
+        }
+    }
 
 
 
