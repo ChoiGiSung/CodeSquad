@@ -17,7 +17,5 @@ public class Main {
         Step_3 step_3=new Step_3();
         step_3.startGame();
 
-
-
     }
 }

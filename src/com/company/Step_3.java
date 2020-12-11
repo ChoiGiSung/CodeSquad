@@ -3,39 +3,45 @@ package com.company;
 import java.util.Scanner;
 
 public class Step_3 {
-    String [][]FCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}}; //앞
-    String [][]BCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}};//뒤
-    String [][]LCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}};//좌
-    String [][]RCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}};//우
-    String [][]UCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}};//상
-    String [][]DCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}};//하
+    String [][]FCube={{"O","O","O"},
+            {"O","O","O"},
+            {"O","O","O"}}; //앞
+    String [][]BCube={{"Y","Y","Y"},
+            {"Y","Y","Y"},
+            {"Y","Y","Y"}};//뒤
+    String [][]LCube={{"W","W","W"},
+            {"W","W","W"},
+            {"W","W","W"}};//좌
+    String [][]RCube={{"G","G","G"},
+            {"G","G","G"},
+            {"G","G","G"}};//우
+    String [][]UCube={{"B","B","B"},
+            {"B","B","B"},
+            {"B","B","B"}};//상
+    String [][]DCube={{"R","R","R"},
+            {"R","R","R"},
+            {"R","R","R"}};//하
     private boolean flag=true;
+    private int count=0;
+    private Long startTime=0L;
+    private Long endTime=0L;
 
     public void startGame(){
         Scanner sc=new Scanner(System.in);
         print(' ');
-
+        getStartTime();// 처음 시간 측정
         while (flag){
             System.out.print("CUBE>");
             String commend=sc.nextLine();
             commend=replaceCommend(commend);
 
             char[] chars=commend.toCharArray();
-            commandSwitch(chars);
-
+            commandSwitch(chars); 
+            if(count>0){ //다 돌고 와서 맞는지 검사 맞으면  함수 내에서 게임 종료
+                checkCube();
+            }
         }
+        endGame();//끝나면
     }
     private void commandSwitch(char[]chars){
 
@@ -43,57 +49,72 @@ public class Step_3 {
             switch (chars[i]){
                 case 'U':
                     U();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'u':
                     UComma();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'R':
                     R();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'r':
                     RComma();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'L':
                     L();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'l':
                     LComma();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'B':
                     B();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'b':
                     BComma();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'F':
                     F();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'f':
                     FComma();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'D':
                     D();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'd':
                     DComma();
+                    ++count;
                     print(chars[i]);
                     break;
                 case '2':
-                    //숫자 2가 들어왔을떄
+                    //숫자 2가 들어왔을떄 앞의 글자를 한번 더 실행
+                    commandSwitch(new char[]{chars[i-1]});
+                    break;
+                case 'T'://Ten의 T를 입력하면 10번 섞음
+                    random();
                     break;
                 default:
-                    System.out.println("Bye~");
                     flag=false;
                     break;
             }
@@ -113,7 +134,7 @@ public class Step_3 {
 
 
     private String replaceCommendChar(char c){
-        //원복
+        //원복 //print에서 사용
         String str=c+""; 
         String result=str.replace("u","U'").replace("r","R'")
                 .replace("l","L'").replace("b","B'")
@@ -144,7 +165,7 @@ public class Step_3 {
                 str3.append(RCube[i][j]);
                 str4.append(BCube[i][j]);
             }
-            System.out.print(str1+"\t"+str2+"\t"+str3+"\t"+str4+"\t"+"\n");
+            System.out.print(str1+"\t"+str2+"\t"+"\t"+str3+"\t"+str4+"\t"+"\n");
         }
         printsolo(DCube);
     }
@@ -380,7 +401,6 @@ public class Step_3 {
         LCube[1][2]=temp[1];
         LCube[0][2]=temp[2];
         FCube=turnAnticlockwise(FCube);//이제 평면 부분 반시계로돌기
-
     }
 
 
@@ -422,5 +442,50 @@ public class Step_3 {
         return rocalCube;
 
     }
+    private void endGame(){
+        //끝내는 함수 시간의 마지막을 저장하고 조작갯수 찍고 ㅇㅇ
+        getEndTime(); //초 찍고
+        System.out.println("조작갯수: "+count);
+        System.out.println("이용해주셔서 감사합니다. 뚜뚜뚜.");
+    }
 
+    //시간을 검사하는 함수 작성
+    private void getStartTime(){
+        startTime=System.currentTimeMillis();
+    }
+    private void getEndTime(){
+        endTime=System.currentTimeMillis();
+        long ingGameTime=(endTime-startTime)/1000; //초
+        long m=ingGameTime/60; //초를 분으로
+        ingGameTime%=60;//분으로 나누고 나머지를 초로 계산
+        System.out.println("경과시간: "+String.format("%02d",m)+":"+String.format("%02d",ingGameTime));
+
+    }
+    private void checkCube(){
+        //큐브가 다 맞춰졌는지 검사 + 축하메시지와 프로그램 종료
+        for (int i = 0; i < FCube.length; i++) {
+            for (int j = 0; j < FCube[0].length; j++) {
+                if(UCube[i][j]=="B" &&LCube[i][j]=="W" &&FCube[i][j]=="O"
+                        &&RCube[i][j]=="G" &&BCube[i][j]=="Y" &&DCube[i][j]=="R" ){
+                    continue;
+                }
+                return;
+            }
+        }
+        //여기까지 온거면 다 맞다
+        //축하메시지
+        System.out.println("다 맞췄어요!");
+        flag=false; //끝내기
+    }
+    private void random(){
+        //무작위로 섞기 10번
+        StringBuilder stringBuilder=new StringBuilder();
+        String[] chars={"U","L","F","R","B","D","U'","L'","F'","R'","B'","D'"};
+        for (int i = 0; i < 10; i++) {
+            String c=chars[(int)(Math.random()*11)];
+            stringBuilder.append(c);
+        }
+        String returnStr = replaceCommend(stringBuilder.toString()); //바뀌어온 글자들
+        commandSwitch(returnStr.toCharArray()); //커맨드실행
+    }
 }
