@@ -476,6 +476,16 @@ public class Step_3 {
         //축하메시지
         System.out.println("다 맞췄어요!");
         flag=false; //끝내기
-
+    }
+    private void random(){
+        //무작위로 섞기 10번
+        StringBuilder stringBuilder=new StringBuilder();
+        String[] chars={"U","L","F","R","B","D","U'","L'","F'","R'","B'","D'"};
+        for (int i = 0; i < 10; i++) {
+            String c=chars[(int)(Math.random()*11)];
+            stringBuilder.append(c);
+        }
+        String returnStr = replaceCommend(stringBuilder.toString()); //바뀌어온 글자들
+        commandSwitch(returnStr.toCharArray()); //커맨드실행
     }
 }
