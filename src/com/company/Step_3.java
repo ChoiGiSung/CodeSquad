@@ -446,4 +446,12 @@ public class Step_3 {
     private void getStartTime(){
         startTime=System.currentTimeMillis();
     }
+    private void getEndTime(){
+        endTime=System.currentTimeMillis();
+        long ingGameTime=(endTime-startTime)/1000; //초
+        long m=ingGameTime/60; //초를 분으로
+        ingGameTime%=60;//분으로 나누고 나머지를 초로 계산
+        System.out.println("경과시간: "+String.format("%02d",m)+":"+String.format("%02d",ingGameTime));
+
+    }
 }
