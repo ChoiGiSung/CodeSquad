@@ -3,22 +3,22 @@ package com.company;
 import java.util.Scanner;
 
 public class Step_3 {
-    String [][]FCube={{"O","O","O"},
+    private String [][]FCube={{"O","O","O"},
             {"O","O","O"},
             {"O","O","O"}}; //앞
-    String [][]BCube={{"Y","Y","Y"},
+    private String [][]BCube={{"Y","Y","Y"},
             {"Y","Y","Y"},
             {"Y","Y","Y"}};//뒤
-    String [][]LCube={{"W","W","W"},
+    private String [][]LCube={{"W","W","W"},
             {"W","W","W"},
             {"W","W","W"}};//좌
-    String [][]RCube={{"G","G","G"},
+    private String [][]RCube={{"G","G","G"},
             {"G","G","G"},
             {"G","G","G"}};//우
-    String [][]UCube={{"B","B","B"},
+    private String [][]UCube={{"B","B","B"},
             {"B","B","B"},
             {"B","B","B"}};//상
-    String [][]DCube={{"R","R","R"},
+    private String [][]DCube={{"R","R","R"},
             {"R","R","R"},
             {"R","R","R"}};//하
     private boolean flag=true;
