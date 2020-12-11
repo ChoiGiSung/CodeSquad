@@ -3,39 +3,42 @@ package com.company;
 import java.util.Scanner;
 
 public class Step_3 {
-    String [][]FCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}}; //앞
-    String [][]BCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}};//뒤
-    String [][]LCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}};//좌
-    String [][]RCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}};//우
-    String [][]UCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}};//상
-    String [][]DCube={{"1","2","3"},
-            {"4","5","6"},
-            {"7","8","9"}};//하
-    private boolean flag=true;
+    String [][]FCube={{"O","O","O"},
+            {"O","O","O"},
+            {"O","O","O"}}; //앞
+    String [][]BCube={{"Y","Y","Y"},
+            {"Y","Y","Y"},
+            {"Y","Y","Y"}};//뒤
+    String [][]LCube={{"W","W","W"},
+            {"W","W","W"},
+            {"W","W","W"}};//좌
+    String [][]RCube={{"G","G","G"},
+            {"G","G","G"},
+            {"G","G","G"}};//우
+    String [][]UCube={{"B","B","B"},
+            {"B","B","B"},
+            {"B","B","B"}};//상
+    String [][]DCube={{"R","R","R"},
+            {"R","R","R"},
+            {"R","R","R"}};//하
+
 
     public void startGame(){
         Scanner sc=new Scanner(System.in);
         print(' ');
-
+        getStartTime();// 처음 시간 측정
         while (flag){
             System.out.print("CUBE>");
             String commend=sc.nextLine();
             commend=replaceCommend(commend);
 
             char[] chars=commend.toCharArray();
-            commandSwitch(chars);
-
+            commandSwitch(chars); 
+            if(count>0){ //다 돌고 와서 맞는지 검사 맞으면  함수 내에서 게임 종료
+                checkCube();
+            }
         }
+        endGame();//끝나면
     }
     private void commandSwitch(char[]chars){
 
@@ -89,11 +92,8 @@ public class Step_3 {
                     DComma();
                     print(chars[i]);
                     break;
-                case '2':
-                    //숫자 2가 들어왔을떄
-                    break;
+
                 default:
-                    System.out.println("Bye~");
                     flag=false;
                     break;
             }
@@ -113,7 +113,7 @@ public class Step_3 {
 
 
     private String replaceCommendChar(char c){
-        //원복
+        //원복 //print에서 사용
         String str=c+""; 
         String result=str.replace("u","U'").replace("r","R'")
                 .replace("l","L'").replace("b","B'")
@@ -144,7 +144,7 @@ public class Step_3 {
                 str3.append(RCube[i][j]);
                 str4.append(BCube[i][j]);
             }
-            System.out.print(str1+"\t"+str2+"\t"+str3+"\t"+str4+"\t"+"\n");
+            System.out.print(str1+"\t"+str2+"\t"+"\t"+str3+"\t"+str4+"\t"+"\n");
         }
         printsolo(DCube);
     }
@@ -380,7 +380,6 @@ public class Step_3 {
         LCube[1][2]=temp[1];
         LCube[0][2]=temp[2];
         FCube=turnAnticlockwise(FCube);//이제 평면 부분 반시계로돌기
-
     }
 
 
