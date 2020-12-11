@@ -23,7 +23,8 @@ public class Step_3 {
             {"R","R","R"}};//하
     private boolean flag=true;
     private int count=0;
-
+    private Long startTime=0L;
+    private Long endTime=0L;
 
     public void startGame(){
         Scanner sc=new Scanner(System.in);
@@ -441,5 +442,8 @@ public class Step_3 {
         return rocalCube;
 
     }
-
+    //시간을 검사하는 함수 작성
+    private void getStartTime(){
+        startTime=System.currentTimeMillis();
+    }
 }
