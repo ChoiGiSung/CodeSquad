@@ -21,6 +21,8 @@ public class Step_3 {
     String [][]DCube={{"R","R","R"},
             {"R","R","R"},
             {"R","R","R"}};//하
+    private boolean flag=true;
+    private int count=0;
 
 
     public void startGame(){
@@ -46,53 +48,71 @@ public class Step_3 {
             switch (chars[i]){
                 case 'U':
                     U();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'u':
                     UComma();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'R':
                     R();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'r':
                     RComma();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'L':
                     L();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'l':
                     LComma();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'B':
                     B();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'b':
                     BComma();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'F':
                     F();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'f':
                     FComma();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'D':
                     D();
+                    ++count;
                     print(chars[i]);
                     break;
                 case 'd':
                     DComma();
+                    ++count;
                     print(chars[i]);
                     break;
-
+                case '2':
+                    //숫자 2가 들어왔을떄 앞의 글자를 한번 더 실행
+                    commandSwitch(new char[]{chars[i-1]});
+                    break;
+                case 'T'://Ten의 T를 입력하면 10번 섞음
+                    random();
+                    break;
                 default:
                     flag=false;
                     break;
