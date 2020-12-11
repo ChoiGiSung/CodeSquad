@@ -454,4 +454,21 @@ public class Step_3 {
         System.out.println("경과시간: "+String.format("%02d",m)+":"+String.format("%02d",ingGameTime));
 
     }
+    private void checkCube(){
+        //큐브가 다 맞춰졌는지 검사 + 축하메시지와 프로그램 종료
+        for (int i = 0; i < FCube.length; i++) {
+            for (int j = 0; j < FCube[0].length; j++) {
+                if(UCube[i][j]=="B" &&LCube[i][j]=="W" &&FCube[i][j]=="O"
+                        &&RCube[i][j]=="G" &&BCube[i][j]=="Y" &&DCube[i][j]=="R" ){
+                    continue;
+                }
+                return;
+            }
+        }
+        //여기까지 온거면 다 맞다
+        //축하메시지
+        System.out.println("다 맞췄어요!");
+        flag=false; //끝내기
+
+    }
 }
