@@ -442,6 +442,13 @@ public class Step_3 {
         return rocalCube;
 
     }
+    private void endGame(){
+        //끝내는 함수 시간의 마지막을 저장하고 조작갯수 찍고 ㅇㅇ
+        getEndTime(); //초 찍고
+        System.out.println("조작갯수: "+count);
+        System.out.println("이용해주셔서 감사합니다. 뚜뚜뚜.");
+    }
+
     //시간을 검사하는 함수 작성
     private void getStartTime(){
         startTime=System.currentTimeMillis();
